@@ -1,0 +1,67 @@
+#!/usr/bin/env node
+// Builds every copy of the instructions from UX-CHECK.md, the one source.
+//   scripts/build-skill          write the generated files
+//   scripts/build-skill --check  fail if any generated file is out of date
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const checklist = readFileSync(join(root, "UX-CHECK.md"), "utf8").trimEnd() + "\n";
+const notice =
+  "<!-- Generated from UX-CHECK.md by scripts/build-skill. Don't edit this file: edit UX-CHECK.md and run the script. -->";
+
+const skillFrontmatter = [
+  "---",
+  "name: run",
+  "description: UX Check. A read-only UX review of this app, task by task and screen by screen. Use when the person asks to run the UX Check, a UX review, or wants to know where people might get stuck. Reads the project, changes nothing, and writes a plain-language report with fix prompts.",
+  "allowed-tools: Read, Grep, Glob",
+  "disallowed-tools: Edit, NotebookEdit, Bash, WebFetch, WebSearch",
+  "---",
+].join("\n");
+
+const startLines = {
+  "lovable.md":
+    "This review must run in Lovable's Chat mode. If you can edit files right now, stop and ask the person to switch to Chat mode before you read anything. Don't change any file.",
+  "bolt.md": "This review must run in Bolt's Plan mode (called Discussion mode in older versions). If you can edit files right now, stop and ask the person to switch before you read anything. Don't change any file.",
+  "cursor.md": "This review must run in Cursor's Ask mode. If you can edit files right now, stop and ask the person to start a new chat in Ask mode before you read anything. Don't change any file.",
+  "claude-chat.md":
+    "The project is in the zip I uploaded. Mark the report \"Partial review\" if any screens are missing from the zip.",
+};
+
+const outputs = {
+  "plugins/ux-check/skills/run/SKILL.md": `${skillFrontmatter}\n\n${notice}\n\n${checklist}`,
+};
+for (const [file, line] of Object.entries(startLines)) {
+  outputs[`start/${file}`] =
+    `${line} Run the UX Check below on this project.\n\n${checklist}`;
+}
+
+// The plugin folder gets its own README for the Claude directory listing,
+// copied from README.md with relative links pointed at GitHub.
+outputs["plugins/ux-check/README.md"] = readFileSync(join(root, "README.md"), "utf8").replace(
+  /\]\((?!https?:|#|mailto:)([^)]+)\)/g,
+  "](https://github.com/discovery-to-delivery-katmoo/ux-check/blob/main/$1)",
+);
+
+const check = process.argv.includes("--check");
+const stale = [];
+for (const [rel, content] of Object.entries(outputs)) {
+  const path = join(root, rel);
+  const current = existsSync(path) ? readFileSync(path, "utf8") : null;
+  if (current === content) continue;
+  if (check) {
+    stale.push(rel);
+  } else {
+    mkdirSync(dirname(path), { recursive: true });
+    writeFileSync(path, content);
+    console.log(`wrote ${rel}`);
+  }
+}
+if (check) {
+  if (stale.length) {
+    console.error(`Out of date: ${stale.join(", ")}. Run scripts/build-skill.`);
+    process.exit(1);
+  }
+  console.log("All generated files match UX-CHECK.md.");
+}

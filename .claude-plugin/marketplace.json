@@ -1,0 +1,17 @@
+{
+  "name": "ux-check",
+  "owner": {
+    "name": "Kat Moore"
+  },
+  "metadata": {
+    "description": "UX Check: a free, read-only UX review for apps built with AI tools."
+  },
+  "plugins": [
+    {
+      "name": "ux-check",
+      "source": "./plugins/ux-check",
+      "description": "See your app the way a first-time user does. A read-only UX review that explains what it finds in plain words."
+    }
+
+  ]
+}

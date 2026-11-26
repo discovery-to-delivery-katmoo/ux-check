@@ -1,0 +1,23 @@
+{
+  "name": "ux-check",
+  "displayName": "UX Check",
+  "version": "0.1.5",
+  "description": "See your app the way a first-time user does. Your AI assistant reads your project, changes nothing, and tells you in plain words where people might get stuck, with a fix to paste for each problem.",
+  "author": {
+    "name": "Kat Moore"
+  },
+  "repository": "https://github.com/discovery-to-delivery-katmoo/ux-check",
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "ux",
+    "usability",
+    "accessibility",
+    "lovable",
+    "founders",
+    "read-only"
+  ],
+  "homepage": "https://www.kathrynmoore.eu/#products",
+  "documentationUrl": "https://github.com/discovery-to-delivery-katmoo/ux-check#readme",
+  "supportUrl": "https://github.com/discovery-to-delivery-katmoo/ux-check/issues",
+  "privacyPolicyUrl": "https://github.com/discovery-to-delivery-katmoo/ux-check#privacy"
+}
