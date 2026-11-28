@@ -8,6 +8,13 @@ On a small app it takes a few minutes. You don't need to know how to code or any
 
 **Accessibility:** UX Check also looks at the accessibility basics it can see in your code, such as buttons with labels and fields with names. It covers only the basics. It isn't a full accessibility audit; for that, you need a specialist.
 
+## What you need
+
+- **An app you've already built**, or started building. The review reads your app's project, so it comes after building, not before.
+- **The tool you built it with.** If that's Lovable, Bolt or Cursor, the review runs right there: pick your tool below.
+- **Built it another way** (another builder, by hand, or with a developer)? Download your project as a zip and use the steps for Claude in your browser. "Claude" there means the normal Claude chat at claude.ai, not Claude Code.
+- **Claude Code** is a separate tool for people who build apps in code. Use that route only if you already use it.
+
 ## How to use it
 
 You don't need to install anything. You copy one page of instructions and paste it into the tool you built your app with. Pick your tool below.
@@ -40,7 +47,7 @@ Before you start:
 3. Before you type anything, click the mode menu at the top of the chat (it usually says **Agent**) and choose **Ask**.
 4. Open the [Cursor instructions](https://raw.githubusercontent.com/discovery-to-delivery-katmoo/ux-check/main/start/cursor.md), copy all of it, paste it into the chat, add your Build Brief or screenshots if you have them, and press **Enter**.
 
-### If you'd rather use Claude in your browser
+### Built another way, or prefer Claude: use Claude in your browser
 
 This works with any app, but Claude sees only the files you give it. Claude needs to be able to open zip files: in Claude, open **Settings**, then **Capabilities**, and switch on code execution and file creation. Before you upload, open the zip and delete any file called `.env`, because it can hold keys to your app's services.
 
@@ -48,6 +55,7 @@ This works with any app, but Claude sees only the files you give it. Claude need
    - **Lovable, paid plans:** open the **Code** tab and click **Download codebase** at the bottom of the file list.
    - **Lovable, free plan:** connect your project to GitHub (the GitHub button at the top of Lovable; you'll need a free GitHub account), open the project on github.com, click the green **Code** button and choose **Download ZIP**.
    - **Bolt:** click your project's name at the top left, then **Export**, then **Download**.
+   - **Any other builder:** look for **Export** or **Download** in its menus. If a developer built it, ask them for the project as a zip file.
 2. Open [claude.ai](https://claude.ai) and start a new chat.
 3. Click the **+** at the bottom left of the message box and upload the zip file, plus any screenshots.
 4. Open the [Claude instructions](https://raw.githubusercontent.com/discovery-to-delivery-katmoo/ux-check/main/start/claude-chat.md), copy all of it, paste it into the message box and press **Enter**.
