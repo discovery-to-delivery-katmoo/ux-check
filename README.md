@@ -19,7 +19,7 @@ You don't need to install anything. You copy one page of instructions and paste 
 
 Before you start:
 - The review only reads your project. In Lovable, Bolt and Cursor it runs in a mode that only reads or chats; if it finds itself in a mode that could change your app, it stops and asks you to switch. In Claude Code, the plugin reads your project and asks before saving the report.
-- **If you have a Build Brief** (from [Build Brief](https://github.com/discovery-to-delivery-katmoo/build-brief)), paste it in the same message, after the instructions. UX Check then knows who your users are and what matters most to them.
+- **If you have a Build Brief** (from [Build Brief](https://github.com/discovery-to-delivery-katmoo/build-brief)), paste it in the same message, after the instructions (in Claude Code, keep it in your project). UX Check then knows who your users are and what matters most to them.
 - **Screenshots help but aren't needed.** If your tool lets you attach images, add up to 10 screenshots of your main screens, taken on a phone if most of your users will be on one.
 - If you don't give it a Build Brief, it will ask you **one** question: whether it has picked the right main tasks. Reply "yes", or correct its list.
 
@@ -47,16 +47,18 @@ Before you start:
 
 ### Claude
 
-The Claude chat at claude.ai or in the Claude app. It works for an app made with any tool, because you upload your project as a zip file. Note that Claude sees only the files you give it. Claude needs to be able to open zip files: in Claude, open **Settings**, then **Capabilities**, and switch on code execution and file creation. Before you upload, open the zip and delete any file called `.env`, because it can hold keys to your app's services.
+The Claude chat at claude.ai or in the Claude app. It works for an app made with any tool, because you upload your project as a zip file.
 
-1. Download your project as a zip file:
+1. In Claude, open **Settings**, then **Capabilities**, and switch on code execution and file creation. Claude needs this to open zip files.
+2. Download your project as a zip file:
    - **Lovable, paid plans:** open the **Code** tab and click **Download codebase** at the bottom of the file list.
    - **Lovable, free plan:** connect your project to GitHub (the GitHub button at the top of Lovable; you'll need a free GitHub account), open the project on github.com, click the green **Code** button and choose **Download ZIP**.
    - **Bolt:** click your project's name at the top left, then **Export**, then **Download**.
    - **Any other builder:** look for **Export** or **Download** in its menus. If a developer built it, ask them for the project as a zip file.
-2. Open [claude.ai](https://claude.ai) and start a new chat.
-3. Click the **+** at the bottom left of the message box and upload the zip file, plus any screenshots.
-4. Open the [Claude instructions](https://raw.githubusercontent.com/discovery-to-delivery-katmoo/ux-check/main/start/claude-chat.md), copy all of it, paste it into the message box and press **Enter**.
+3. Open the zip and delete any file called `.env`, if there is one. It can hold keys to your app's services, and UX Check doesn't need it.
+4. Start a new chat in Claude.
+5. Click the **+** at the bottom left of the message box and upload the zip file, plus any screenshots.
+6. Open the [Claude instructions](https://raw.githubusercontent.com/discovery-to-delivery-katmoo/ux-check/main/start/claude-chat.md), copy all of it, paste it into the message box and press **Enter**.
 
 ### Claude Code
 
@@ -82,7 +84,7 @@ Claude Code will ask to create one new file, `ux-check-report.md`, with the repo
 2. On a big app it can take 10 minutes or more.
 3. The report appears in the chat. Its first line says how much it found and where to start. The last line says "Report complete (8 of 8 parts)". If you don't see it, type **continue**.
 4. **Save the report:** copy it into a document of your own.
-5. **To fix something:** switch your tool back to its normal mode (Build in Lovable and Bolt, Agent in Cursor). Copy one fix prompt from the report, paste it and send it. Do one fix at a time, then try the task in your app as the report describes.
+5. **To fix something:** switch your tool back to its normal mode (Build in Lovable and Bolt, Agent in Cursor). Copy one fix prompt from the report, paste it and send it. Do one fix at a time, then try the task in your app as the report describes. If you ran the review in Claude, paste fixes into the tool you build with. In Claude Code, paste them into a new, normal chat.
 6. **If something in the report doesn't make sense,** paste that part back into the same chat and ask "explain this in plain words".
 
 If it stops partway, for example because you hit your tool's usage limit, wait until the limit resets and type **continue**.
