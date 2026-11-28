@@ -2,7 +2,7 @@
 
 See your app the way a first-time user does.
 
-A free UX review for apps built with AI tools such as Lovable, Bolt, Cursor and Claude Code. UX means how easy your app is to understand and use. Your AI assistant reads your project and goes through each main task screen by screen, as your users would meet it. It tells you in plain words where people might get stuck, get confused or give up, with a ready-made prompt to fix each bigger problem and a one-line fix for small ones. It doesn't change your app.
+A free UX review for apps built with AI tools such as Lovable, Bolt or Cursor, or built any other way. UX means how easy your app is to understand and use. Your AI assistant reads your project and goes through each main task screen by screen, as your users would meet it. It tells you in plain words where people might get stuck, get confused or give up, with a ready-made prompt to fix each bigger problem and a one-line fix for small ones. It doesn't change your app.
 
 On a small app it takes a few minutes. You don't need to know how to code or anything about design, and it's free. It runs in your own AI tool, so it uses that tool's normal allowance.
 
