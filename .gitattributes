@@ -1,1 +1,2 @@
 scripts/build-skill linguist-language=JavaScript
+tests/apps/** linguist-vendored
