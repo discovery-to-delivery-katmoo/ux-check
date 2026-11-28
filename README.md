@@ -11,13 +11,11 @@ On a small app it takes a few minutes. You don't need to know how to code or any
 ## What you need
 
 - **An app you've already built**, or started building. The review reads your app's project, so it comes after building, not before.
-- **The tool you built it with.** If that's Lovable, Bolt or Cursor, the review runs right there: pick your tool below.
-- **Built it another way** (another builder, by hand, or with a developer)? Download your project as a zip and use the steps for Claude in your browser. "Claude" there means the normal Claude chat at claude.ai, not Claude Code.
-- **Claude Code** is a separate tool for people who build apps in code. Use that route only if you already use it.
+- **One of these AI tools:** Lovable, Bolt, Cursor, Claude or Claude Code. If you built your app in one of them, use that one. If you built it somewhere else, by hand or with a developer, use Claude: you upload your project as a zip file, so it works for an app made with any tool.
 
 ## How to use it
 
-You don't need to install anything. You copy one page of instructions and paste it into the tool you built your app with. Pick your tool below.
+You don't need to install anything. You copy one page of instructions and paste it into one of the tools below.
 
 Before you start:
 - The review only reads your project. In Lovable, Bolt and Cursor it runs in a mode that only reads or chats; if it finds itself in a mode that could change your app, it stops and asks you to switch. In Claude Code, the plugin reads your project and asks before saving the report.
@@ -25,7 +23,7 @@ Before you start:
 - **Screenshots help but aren't needed.** If your tool lets you attach images, add up to 10 screenshots of your main screens, taken on a phone if most of your users will be on one.
 - If you don't give it a Build Brief, it will ask you **one** question: whether it has picked the right main tasks. Reply "yes", or correct its list.
 
-### If you built with Lovable
+### Lovable
 
 1. Open your project in Lovable.
 2. Switch the chat to **Chat** mode. Click the mode picker next to the message box and choose **Chat** ("Ask anything, explore ideas"). Not Build, and not Plan.
@@ -33,23 +31,23 @@ Before you start:
 4. Copy all of it: press **Ctrl+A**, then **Ctrl+C** (on a Mac, **Cmd+A**, then **Cmd+C**).
 5. Go back to Lovable, click in the message box, paste (**Ctrl+V** or **Cmd+V**), add your Build Brief or screenshots if you have them, and press **Enter**.
 
-### If you built with Bolt
+### Bolt
 
 1. Open your project in Bolt.
 2. Click **Plan** next to the message box so it turns blue. In older versions of Bolt this is called **Discussion** mode. It can't change your code.
 3. Open the [Bolt instructions](https://raw.githubusercontent.com/discovery-to-delivery-katmoo/ux-check/main/start/bolt.md) and copy all of it (**Ctrl+A**, then **Ctrl+C**; on a Mac, **Cmd+A**, then **Cmd+C**).
 4. Paste it into Bolt's message box, add your Build Brief or screenshots if you have them, and press **Enter**.
 
-### If you use Cursor
+### Cursor
 
 1. Open your project in Cursor.
 2. Start a new chat (**Ctrl+I**, or **Cmd+I** on a Mac).
 3. Before you type anything, click the mode menu at the top of the chat (it usually says **Agent**) and choose **Ask**.
 4. Open the [Cursor instructions](https://raw.githubusercontent.com/discovery-to-delivery-katmoo/ux-check/main/start/cursor.md), copy all of it, paste it into the chat, add your Build Brief or screenshots if you have them, and press **Enter**.
 
-### Built another way, or prefer Claude: use Claude in your browser
+### Claude
 
-This works with any app, but Claude sees only the files you give it. Claude needs to be able to open zip files: in Claude, open **Settings**, then **Capabilities**, and switch on code execution and file creation. Before you upload, open the zip and delete any file called `.env`, because it can hold keys to your app's services.
+The Claude chat at claude.ai or in the Claude app. It works for an app made with any tool, because you upload your project as a zip file. Note that Claude sees only the files you give it. Claude needs to be able to open zip files: in Claude, open **Settings**, then **Capabilities**, and switch on code execution and file creation. Before you upload, open the zip and delete any file called `.env`, because it can hold keys to your app's services.
 
 1. Download your project as a zip file:
    - **Lovable, paid plans:** open the **Code** tab and click **Download codebase** at the bottom of the file list.
@@ -60,9 +58,9 @@ This works with any app, but Claude sees only the files you give it. Claude need
 3. Click the **+** at the bottom left of the message box and upload the zip file, plus any screenshots.
 4. Open the [Claude instructions](https://raw.githubusercontent.com/discovery-to-delivery-katmoo/ux-check/main/start/claude-chat.md), copy all of it, paste it into the message box and press **Enter**.
 
-### If you already use Claude Code
+### Claude Code
 
-Type each line into Claude Code and press **Enter** after each one:
+Claude Code is Anthropic's tool for building apps in code. It's separate from the Claude chat. If you use it, type each line into it and press **Enter** after each one:
 
 ```
 /plugin marketplace add discovery-to-delivery-katmoo/ux-check
